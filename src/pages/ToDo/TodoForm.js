@@ -11,7 +11,7 @@ const TodoForm = () => {
             // value: value,VQGfQFyYFADZNYa2
             value:value,
         }
-        fetch('http://localhost:5000/lists', {
+        fetch('https://cryptic-bastion-79290.herokuapp.com/lists', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

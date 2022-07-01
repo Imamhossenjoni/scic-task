@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 const CompletedTask = () => {
     const [tasks,setTasks]=useState([]);
     useEffect(()=>{
-        fetch('http://localhost:5000/add')
+        fetch('https://cryptic-bastion-79290.herokuapp.com/add')
         .then(res=>res.json())
         .then(data=>setTasks(data))
     },[])
@@ -14,4 +14,5 @@ const CompletedTask = () => {
         </div>
     );
 };
+
 export default CompletedTask;

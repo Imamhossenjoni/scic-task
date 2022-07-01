@@ -4,16 +4,16 @@ import {Link} from 'react-router-dom'
 const TodoList = () => {
     const [lists, setLists] = useState([])
     useEffect(() => {
-        fetch('http://localhost:5000/lists')
+        fetch('https://cryptic-bastion-79290.herokuapp.com/lists')
             .then(res => res.json())
             .then(data => setLists(data));
     }, [])
 const handleAdd=id=>{
-    const url= `http://localhost:5000/lists/${id}`
+    const url= `https://cryptic-bastion-79290.herokuapp.com/lists/${id}`
     fetch(url)
     .then(res=>res.json())
     .then(data=>{
-        fetch('http://localhost:5000/add',{
+        fetch('https://cryptic-bastion-79290.herokuapp.com/add',{
             method:'POST',
             headers:{
                 'content-type':'application/json'

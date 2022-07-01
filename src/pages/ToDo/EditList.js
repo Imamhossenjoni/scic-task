@@ -5,7 +5,7 @@ const EditList = () => {
     const { id } = useParams();
     const [list, setList] = useState({});
     useEffect(() => {
-        const url = `http://localhost:5000/lists/${id}`
+        const url = `https://cryptic-bastion-79290.herokuapp.com/lists/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setList(data))
@@ -19,7 +19,7 @@ const EditList = () => {
             // value: value,VQGfQFyYFADZNYa2
             value: value,
         }
-        fetch(`http://localhost:5000/lists/${id}`, {
+        fetch(`https://cryptic-bastion-79290.herokuapp.com/lists/${id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
