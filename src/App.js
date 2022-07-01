@@ -1,23 +1,29 @@
-import logo from './logo.svg';
+import { Routes, Route} from "react-router-dom";
 import './App.css';
+import Calender from "./pages/Calender/Calender";
+import CompletedTask from "./pages/Completed/CompletedTask";
+import Home from "./pages/Home/Home";
+import Footer from "./pages/shared/Footer";
+import Navbar from './pages/shared/Navbar';
+import EditList from "./pages/ToDo/EditList";
+import ToDo from "./pages/ToDo/ToDo";
+import TodoForm from "./pages/ToDo/TodoForm";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar></Navbar>
+      <Routes>
+        <Route path='/' element={<CompletedTask></CompletedTask>}></Route>
+        <Route path='/home' element={<CompletedTask></CompletedTask>}></Route>
+        <Route path='/todo' element={<ToDo></ToDo>}></Route>
+        <Route path='/completed' element={<CompletedTask></CompletedTask>}></Route>
+        <Route path='/todo' element={<ToDo></ToDo>}></Route>
+        <Route path='/calender' element={<Calender></Calender>}></Route>
+        <Route path='/update/:id' element={<EditList></EditList>}></Route>
+
+      </Routes>
+      <Footer></Footer>
     </div>
   );
 }
